@@ -25,4 +25,10 @@
     {
         $conta['titular'] = mb_strtoupper($conta['titular']);
     }
+    function exibeConta(array $conta)
+    {
+        ['titular' => $titular, 'saldo' => $saldo] = $conta;
+        echo "<li>Titular: {$conta['titular']} Saldo: {$conta['saldo']}</li>";
+        
+    }
 ?>
