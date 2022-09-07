@@ -37,6 +37,7 @@
           $contasCorrentes['511.858.155-55']['saldo'] -= 500;
     }
     */
+    unset($contasCorrentes['511.858.155-34']);
 
     foreach ($contasCorrentes as $cpf => $conta) {
       //list('titular' => $titular, 'saldo' => $saldo) = $conta;
