@@ -8,7 +8,6 @@
         }
         return $conta;
     }
-
     function depositar(array $conta, float $valorDeposito) : array
     {
         if($valorDeposito > 0){
@@ -18,9 +17,12 @@
         }
         return $conta;
     }
-
     function exibeMensagem($mensagem)
     {
         echo $mensagem . "<br>";
+    }
+    function titularComLetrasMaisculas(array &$conta)
+    {
+        $conta['titular'] = strtoupper($conta['titular']);
     }
 ?>
