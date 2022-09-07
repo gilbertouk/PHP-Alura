@@ -23,6 +23,6 @@
     }
     function titularComLetrasMaisculas(array &$conta)
     {
-        $conta['titular'] = strtoupper($conta['titular']);
+        $conta['titular'] = mb_strtoupper($conta['titular']);
     }
 ?>

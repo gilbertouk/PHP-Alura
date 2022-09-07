@@ -1,6 +1,8 @@
 <?php
     $idadeList = [21, 23, 19, 25, 30, 41, 18];
 
+    list($idadeLethicia, $idadeGilberto, $idadeMichelly) = $idadeList;
+
     $idadeList[7] = 20;
 
     $idadeList[count($idadeList)] = 38;

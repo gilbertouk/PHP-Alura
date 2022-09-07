@@ -39,7 +39,10 @@
     */
 
     foreach ($contasCorrentes as $cpf => $conta) {
-      exibeMensagem("$cpf - {$conta['titular']} - {$conta['saldo']}");
+      //list('titular' => $titular, 'saldo' => $saldo) = $conta;
+      ['titular' => $titular, 'saldo' => $saldo] = $conta;
+      exibeMensagem("$cpf - $titular - $saldo");
+      //exibeMensagem("$cpf - {$conta['titular']} - {$conta['saldo']}");
       //exibeMensagem("$cpf - $conta[titular]  - $conta[saldo]");
       //exibeMensagem("$cpf - " . $conta['titular'] . " - " . $conta['saldo']);
     }
