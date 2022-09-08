@@ -8,6 +8,7 @@
 
         public function __construct(string $cpfTitular, string $nomeTitular)
         {
+            echo "Criando nova conta! <br>";
             $this->cpfTitular = $cpfTitular;
             $this->nomeTitular = $nomeTitular;
             $this->saldo = 0;
@@ -23,14 +24,6 @@
         public function getSaldo(): float
         {
             return $this->saldo;
-        }
-        public function setCpfTitular(string $cpfTitular): void
-        {
-            $this->cpfTitular = $cpfTitular;
-        }
-        public function setNomeTitular(string $nomeTitular): void
-        {
-            $this->nomeTitular = $nomeTitular;
         }
         public function sacar(float $valorASacar): void
         {

@@ -11,19 +11,14 @@
         <?php
         require_once 'src/Conta.php';
 
-$primeiraConta = new Conta('123.456.789-10', 'Gilberto Antonio');
+        $primeiraConta = new Conta('123.456.789-10', 'Gilberto Antonio');
         $primeiraConta->depositar(500);
         $primeiraConta->sacar(300);
 
         var_dump($primeiraConta);
-        $primeiraConta->depositar(300);
 
-        var_dump($primeiraConta);
-
-        echo $primeiraConta->getSaldo() . "<br>";
-        $primeiraConta->setNomeTitular('Lethicia Alvares da Silva');
-
-        var_dump($primeiraConta);
+        $segundaConta = new Conta("987.654.321.20", "Patricia Moura");
+        var_dump($segundaConta);
         ?>
     </pre>
 </body>
