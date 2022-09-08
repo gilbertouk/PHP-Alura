@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagina Teste</title>
 </head>
 <body>
     <pre>
         <?php
-            require 'src/Conta.php';
+            require_once 'src/Conta.php';
 
             $primeiraConta = new Conta();
             $primeiraConta->cpfTitular = '123.456.789-10';
@@ -24,8 +24,20 @@
             var_dump($primeiraConta);
             var_dump($segundaConta);
 
+            /*
+            $c = $segundaConta;
+
+            $c->saldo = 200;
+
+            var_dump($c);
+            var_dump($segundaConta);
+            */
+
+            $segundaConta->transferir(2000, $primeiraConta);
+            echo "<br><br>";
+            var_dump($primeiraConta);
+            var_dump($segundaConta);
         ?>
     </pre>
 </body>
 </html>
-
