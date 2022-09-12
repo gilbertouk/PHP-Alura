@@ -2,28 +2,31 @@
     class Conta
     {
         // definir dados da conta
-        private  $cpfTitular;
-        private  $nomeTitular;
-        private  $saldo;
+        private Titular $titular;
+        private float $saldo;
+        private static $numeroDeContas;
 
-        public function __construct(string $cpfTitular, string $nomeTitular)
+        public function __construct(Titular $titular)
         {
-            echo "Criando nova conta! <br>";
-            $this->cpfTitular = $cpfTitular;
-            $this->nomeTitular = $nomeTitular;
+            $this->titular = $titular;
             $this->saldo = 0;
+            self::$numeroDeContas++;
         }
-        public function getCpfTitular(): string
+        public function __destruct()
         {
-            return $this->cpfTitular;
-        }
-        public function getNomeTitular(): string
-        {
-            return $this->nomeTitular;
+            self::$numeroDeContas--;
         }
         public function getSaldo(): float
         {
             return $this->saldo;
+        }
+        public function getNome(): string
+        {
+            return $this->titular->getNome();
+        }
+        public function getCpf(): string
+        {
+            return $this->titular->getCpf();
         }
         public function sacar(float $valorASacar): void
         {
@@ -49,6 +52,10 @@
             }
             $this->sacar($valorATarnsferir);
             $contaDestino->depositar($valorATarnsferir);            
-        }        
+        }
+        public static function getNumeroDeContas(): int
+        {
+            return self::$numeroDeContas;
+        }   
     }
 ?>

@@ -10,15 +10,31 @@
     <pre>
         <?php
         require_once 'src/Conta.php';
+        require_once 'src/Titular.php';
+        require_once 'src/CPF.php';
 
-        $primeiraConta = new Conta('123.456.789-10', 'Gilberto Antonio');
+        $gilberto = new Titular(new CPF('123.456.789-10'), 'Gilberto Antonio');
+        $primeiraConta = new Conta($gilberto);
+
+
+        //$primeiraConta = new Conta(new Titular(new Cpf(('123.456.789-10'), 'Gilberto Antonio')));
         $primeiraConta->depositar(500);
         $primeiraConta->sacar(300);
 
         var_dump($primeiraConta);
 
-        $segundaConta = new Conta("987.654.321.20", "Patricia Moura");
+        echo $primeiraConta->getNome() . "<br>"; 
+        echo $primeiraConta->getCpf() . "<br>"; 
+        echo $primeiraConta->getSaldo() . "<br>"; 
+
+        $patricia = new Titular(new CPF('987.654.321-20'), 'Patricia Moura');
+        $segundaConta = new Conta($patricia);
         var_dump($segundaConta);
+
+        $anaMaria = new Titular(new CPF('035.157.851-50'), 'Ana Maria');
+        $terceiraConta = new Conta($anaMaria);
+        var_dump($terceiraConta);
+        echo Conta::getNumeroDeContas();
         ?>
     </pre>
 </body>
