@@ -1,4 +1,7 @@
 <?php
+
+    namespace Alura\Banco\Modelo;
+
     //Funcionario e uma Pessoa
     class Funcionario extends Pessoa
     {
@@ -6,14 +9,17 @@
 
         public function __construct(string $nome, CPF $cpf, string $cargo)
         {
-            $this->validaNomeTitular($nome);
-            $this->nome = $nome;
-            $this->cpf = $cpf;
+            parent::__construct($nome, $cpf);
             $this->cargo = $cargo;
         }
         public function getCargo(): string
         {
             return $this->cargo;
+        }
+        public function alteraNome(string $nome): void
+        {
+            $this->validaNomeTitular($nome);
+            $this->nome = $nome;
         }
     }
 ?>

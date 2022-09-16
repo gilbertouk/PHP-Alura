@@ -1,4 +1,7 @@
 <?php
+
+    namespace Alura\Banco\Modelo\Conta;
+
     class Conta
     {
         // definir dados da conta
