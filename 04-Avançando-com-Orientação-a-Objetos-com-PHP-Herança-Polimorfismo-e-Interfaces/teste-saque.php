@@ -10,6 +10,7 @@
     <pre>
         <?php
             use Alura\Banco\Modelo\Conta\Conta;
+            use Alura\Banco\Modelo\Conta\ContaCorrente;
             use Alura\Banco\Modelo\Conta\ContaPoupanca;
             use Alura\Banco\Modelo\Conta\Titular;
             use Alura\Banco\Modelo\CPF;
@@ -17,7 +18,7 @@
 
             require_once 'autoload.php';
 
-            $conta = new ContaPoupanca(
+            $conta = new ContaCorrente(
                 new Titular(
                     new CPF('035.758.658-52'), 
                     'Gilberto Antonio',
@@ -30,6 +31,7 @@
             echo "<br>";
             $conta->sacar(100);
             var_dump($conta);
+            
         ?>
     </pre>
 </body>
