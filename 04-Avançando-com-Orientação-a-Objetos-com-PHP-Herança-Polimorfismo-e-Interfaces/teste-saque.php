@@ -10,19 +10,19 @@
     <pre>
         <?php
             use Alura\Banco\Modelo\Conta\Conta;
+            use Alura\Banco\Modelo\Conta\ContaPoupanca;
             use Alura\Banco\Modelo\Conta\Titular;
             use Alura\Banco\Modelo\CPF;
             use Alura\Banco\Modelo\Endereco;
 
             require_once 'autoload.php';
 
-            $conta = new Conta(
+            $conta = new ContaPoupanca(
                 new Titular(
                     new CPF('035.758.658-52'), 
                     'Gilberto Antonio',
                     new Endereco('London', 'Stamford Hill', 'Rolysn Rd', '74')
-                ),
-                2
+                )
             );
 
             $conta->depositar(500);
