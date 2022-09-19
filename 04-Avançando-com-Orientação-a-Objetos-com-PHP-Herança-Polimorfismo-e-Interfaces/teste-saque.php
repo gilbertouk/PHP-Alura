@@ -21,7 +21,8 @@
                     new CPF('035.758.658-52'), 
                     'Gilberto Antonio',
                     new Endereco('London', 'Stamford Hill', 'Rolysn Rd', '74')
-                )
+                ),
+                2
             );
 
             $conta->depositar(500);
