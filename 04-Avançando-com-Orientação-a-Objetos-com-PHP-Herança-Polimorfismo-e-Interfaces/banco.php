@@ -12,13 +12,13 @@
             require_once 'autoload.php';
 
             use Alura\Banco\Modelo\Conta\Titular;
-            use Alura\Banco\Modelo\Conta\Conta;
+            use Alura\Banco\Modelo\Conta\{Conta, ContaCorrente, ContaPoupanca};
             use Alura\Banco\Modelo\Endereco;
             use Alura\Banco\Modelo\CPF;
 
             $endereco = new Endereco('London', 'Seven Sisters', 'Rolysn rd', '74b');
             $gilberto = new Titular(new CPF('123.456.789-10'), 'Gilberto Antonio', $endereco);
-            $primeiraConta = new Conta($gilberto);
+            $primeiraConta = new ContaCorrente($gilberto);
 
 
             //$primeiraConta = new Conta(new Titular(new Cpf(('123.456.789-10'), 'Gilberto Antonio')));
@@ -32,12 +32,12 @@
             echo $primeiraConta->getSaldo() . "<br>"; 
 
             $patricia = new Titular(new CPF('987.654.321-20'), 'Patricia Moura', $endereco);
-            $segundaConta = new Conta($patricia);
+            $segundaConta = new ContaPoupanca($patricia);
             var_dump($segundaConta);
 
             $endereco1 = new Endereco('Goiania', 'Jardim Gramado', 'Dois Rios', '58');
             $anaMaria = new Titular(new CPF('035.157.851-50'), 'Ana Maria', $endereco1);
-            $terceiraConta = new Conta($anaMaria);
+            $terceiraConta = new ContaCorrente($anaMaria);
             $terceiraConta->depositar(620);
             var_dump($terceiraConta);
             echo Conta::getNumeroDeContas();

@@ -9,7 +9,7 @@
 
         public function adicionaBonificacaoDe(Funcionario $funcionario)
         {
-            $this->totalBonificacoes += $funcionario->calcularBonificacao();
+            $this->totalBonificacoes += $funcionario->calculaBonificacao();
         }
         public function getTotal(): float
         {
