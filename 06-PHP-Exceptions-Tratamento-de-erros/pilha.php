@@ -15,6 +15,6 @@
         echo "Saindo da funcao 2 <br>";
     }
 
-    echo "Iniciando o programa principal. <br>";
+    echo "Iniciando o programa principal.<br>";
     funcao1();
-    echo "Finalizando o programa principal. <br>";
+    echo "Finalizando o programa principal.<br>";
