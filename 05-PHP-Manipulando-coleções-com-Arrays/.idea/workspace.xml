@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="39397441-66a8-45f0-ad49-6f2f9bad3c88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculadora.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media.php" beforeDir="false" afterPath="$PROJECT_DIR$/media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saldo.php" beforeDir="false" afterPath="$PROJECT_DIR$/saldo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alura/ArrayUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alura/ArrayUtils.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664271645396</updated>
-      <workItem from="1664271646610" duration="8474000" />
+      <workItem from="1664271646610" duration="10521000" />
     </task>
     <servers />
   </component>
