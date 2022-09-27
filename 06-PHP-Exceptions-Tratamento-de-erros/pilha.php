@@ -9,11 +9,6 @@
             echo $problema->getLine() . "<br>";
             echo $problema->getTraceAsString() . "<br>";
 
-            throw new RuntimeException(
-                'Excecao foi tratada, mas guarda esse erro.',
-                1,
-                $problema
-            );
         }
 
         /* catch (DivisionByZeroError $erro){
@@ -27,8 +22,7 @@
     {
         echo "Entrei na funcao 2 <br>";
 
-        $exception = new RuntimeException();
-        throw $exception;
+        $exception = new RuntimeException('Essa e uma mensagem de erro.');
 
         for($i = 1; $i <= 5; $i++){
             echo "$i <br>";
