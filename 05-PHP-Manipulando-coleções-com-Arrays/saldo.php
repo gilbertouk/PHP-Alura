@@ -16,6 +16,7 @@
     echo "<pre>";
     var_dump($saldos);
 
+    //Ordenando o array
     sort($saldos);
 
     var_dump($saldos);

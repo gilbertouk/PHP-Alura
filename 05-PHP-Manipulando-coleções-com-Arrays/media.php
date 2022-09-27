@@ -1,6 +1,8 @@
 <?php
 
-    require_once 'Calculadora.php';
+    namespace Alura;
+
+    require_once 'autoload.php';
 
     $notas = array(8, 5, 9, 7);
 
