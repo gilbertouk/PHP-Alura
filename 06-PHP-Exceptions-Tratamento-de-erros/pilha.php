@@ -8,6 +8,12 @@
             echo $problema->getMessage() . "<br>";
             echo $problema->getLine() . "<br>";
             echo $problema->getTraceAsString() . "<br>";
+
+            throw new RuntimeException(
+                'Excecao foi tratada, mas guarda esse erro.',
+                1,
+                $problema
+            );
         }
 
         /* catch (DivisionByZeroError $erro){
@@ -21,9 +27,8 @@
     {
         echo "Entrei na funcao 2 <br>";
 
-        $arrayFixo = new SplFixedArray(2);
-        $arrayFixo[2] = 'Valor';
-        $divisao = intdiv(5, 0);
+        $exception = new RuntimeException();
+        throw $exception;
 
         for($i = 1; $i <= 5; $i++){
             echo "$i <br>";
