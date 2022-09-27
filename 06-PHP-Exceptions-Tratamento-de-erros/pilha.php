@@ -3,21 +3,28 @@
     {
         echo "Entrei na funcao 1 <br>";
         try {
-
-            $arrayFixo = new SplFixedArray(2);
-            $arrayFixo[3] = 'Valor';
-            /*$divisao = intdiv(5, 0);*/
-        } catch (RuntimeException $problema){
-            echo "Aconteceu um erro na funcao 1. <br>";
-            echo $problema . "<br>";
+            funcao2();
+        } catch (RuntimeException | DivisionByZeroError $problema){
+            echo $problema->getMessage() . "<br>";
+            echo $problema->getLine() . "<br>";
+            echo $problema->getTraceAsString() . "<br>";
         }
-        funcao2();
+
+        /* catch (DivisionByZeroError $erro){
+            echo "Erro ao dividir um numero por 0. <br>";
+        } */
+
         echo "Saindo da funcao 1 <br>";
     }
 
     function funcao2()
     {
         echo "Entrei na funcao 2 <br>";
+
+        $arrayFixo = new SplFixedArray(2);
+        $arrayFixo[2] = 'Valor';
+        $divisao = intdiv(5, 0);
+
         for($i = 1; $i <= 5; $i++){
             echo "$i <br>";
         }
