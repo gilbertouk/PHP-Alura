@@ -1,28 +1,26 @@
 <?php 
 
-    namespace Alura\Banco\Modelo;
+namespace Alura\Banco\Modelo;
 
-    final class CPF 
-    {
-        private string $cpf;
+final class CPF
+{
+    private string $cpf;
         
-        public function __construct(string $cpf)
-        {
-            $cpf = filter_var($cpf, FILTER_VALIDATE_REGEXP, [
-                'options' => [
-                    'regexp' => '/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$/'
-                ]
-                ]);
-            if($cpf === false){
-                echo "CPF invalido";
-                exit();
-            }
-            $this->cpf = $cpf;
-        }
-        public function getCpf(): string
-        {
-            return $this->cpf;
-        }
-    }
+    public function __construct(string $cpf)
+    {
+        $cpf = filter_var($cpf, FILTER_VALIDATE_REGEXP, [
+        'options' => [
+            'regexp' => '/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$/'
+            ]
+        ]);
 
-?>
+        if($cpf === false){
+            throw new \InvalidArgumentException();
+        }
+        $this->cpf = $cpf;
+    }
+    public function getCpf(): string
+    {
+        return $this->cpf;
+    }
+}

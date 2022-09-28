@@ -30,7 +30,7 @@
                 echo "Voce nao tem saldo para realizar este saque. <br>";
                 echo $exception->getMessage() . "<br>";
             }
-            
+
             echo $conta->getSaldo();
         ?>
     </pre>
