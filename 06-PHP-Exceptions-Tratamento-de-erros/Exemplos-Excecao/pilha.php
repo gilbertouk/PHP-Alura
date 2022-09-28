@@ -4,11 +4,10 @@
         echo "Entrei na funcao 1 <br>";
         try {
             funcao2();
-        } catch (RuntimeException | DivisionByZeroError $problema){
+        } catch (Throwable $problema){
             echo $problema->getMessage() . "<br>";
             echo $problema->getLine() . "<br>";
             echo $problema->getTraceAsString() . "<br>";
-
         }
 
         /* catch (DivisionByZeroError $erro){
@@ -22,7 +21,8 @@
     {
         echo "Entrei na funcao 2 <br>";
 
-        $exception = new RuntimeException('Essa e uma mensagem de erro.');
+        intdiv(1, 0);
+        throw new BadFunctionCallException('Essa e a mensagem de excecao.');
 
         for($i = 1; $i <= 5; $i++){
             echo "$i <br>";
