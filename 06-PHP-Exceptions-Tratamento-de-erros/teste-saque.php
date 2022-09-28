@@ -9,12 +9,12 @@
 <body>
     <pre>
         <?php
-            use Alura\Banco\Modelo\Conta\{ContaCorrente, ContaPoupanca, Titular};
+            use Alura\Banco\Modelo\Conta\{ContaCorrente, ContaPoupanca, Titular, SaldoInsuficienteException};
             use Alura\Banco\Modelo\{CPF, Endereco};
             
             require_once 'autoload.php';
 
-            $conta = new ContaCorrente(
+            $conta = new ContaPoupanca(
                 new Titular(
                     new CPF('035.758.658-52'), 
                     'Gilberto Antonio',
@@ -23,11 +23,15 @@
             );
 
             $conta->depositar(500);
-            var_dump($conta);
-            echo "<br>";
-            $conta->sacar(100);
-            var_dump($conta);
+
+            try {
+                $conta->sacar(600);
+            } catch (SaldoInsuficienteException $exception) {
+                echo "Voce nao tem saldo para realizar este saque. <br>";
+                echo $exception->getMessage() . "<br>";
+            }
             
+            echo $conta->getSaldo();
         ?>
     </pre>
 </body>

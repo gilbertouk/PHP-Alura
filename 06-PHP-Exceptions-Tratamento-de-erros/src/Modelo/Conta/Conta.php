@@ -36,8 +36,7 @@
             $tarifaSaque = $valorASacar * $this->percentualTarifa();
             $valorSaque = $valorASacar + $tarifaSaque;
             if($valorSaque > $this->saldo){
-                echo "Saldo Indisponivel!<br>";
-                return;
+                throw new SaldoInsuficienteException($valorSaque, $this->saldo);
             }
             $this->saldo -= $valorSaque;            
         }
