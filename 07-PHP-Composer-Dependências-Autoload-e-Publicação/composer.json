@@ -1,0 +1,16 @@
+{
+    "name": "gilbertouk/buscador-cursos",
+    "description": "Projeto que busca os cursos no site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gilberto Antonio",
+            "email": "gilbertoantoniouk@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "symfony/dom-crawler": "^6.1",
+        "symfony/css-selector": "^6.1"
+    }
+}
