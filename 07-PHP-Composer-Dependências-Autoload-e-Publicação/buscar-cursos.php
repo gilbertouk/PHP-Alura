@@ -1,7 +1,8 @@
 <?php
 
+//vendor\bin\phpcs --standard=PSR12 mais o caminho do arquivo para verificar possiveis erros de padroes no arquivo.
+
 require_once 'vendor/autoload.php';
-require_once 'src\Buscador.php';
 
 use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
@@ -13,6 +14,6 @@ $crawler = new Crawler();
 $buscador = new Buscador($client, $crawler);
 $cursos = $buscador->buscar('/cursos-online-programacao/php');
 
-foreach ($cursos as $curso){
-    echo $curso . "<br>";
+foreach ($cursos as $curso) {
+    echo exibeMensagem($curso);
 }
