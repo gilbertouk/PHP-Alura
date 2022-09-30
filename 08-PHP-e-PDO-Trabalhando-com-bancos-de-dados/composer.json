@@ -1,0 +1,15 @@
+{
+  "description": "Projeto de cadastro de alunos com banco de dados sql-lite",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Gilberto Antonio",
+      "email": "gilbertoantoniouk@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Alura\\Pdo\\": "src"
+    }
+  }
+}
