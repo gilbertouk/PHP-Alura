@@ -14,7 +14,6 @@ class Student
         $this->name = $name;
         $this->birthDate = $birthDate;
     }
-
     public function id(): ?int
     {
         return $this->id;
@@ -22,6 +21,10 @@ class Student
     public function name(): string
     {
         return $this->name;
+    }
+    public function changeName(string $newName): void
+    {
+        $this->name = $newName;
     }
     public function birthDate(): \DateTimeInterface
     {
