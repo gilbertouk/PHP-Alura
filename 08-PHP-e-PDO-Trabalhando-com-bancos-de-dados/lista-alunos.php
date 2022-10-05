@@ -20,18 +20,3 @@ foreach ($studentDataList as $studentData){
 echo "<pre>";
 var_dump($studentList);
 echo "</pre>";
-
-
-
-
-/*
-while ($studentData = $statement->fetch(PDO::FETCH_ASSOC)) {
-    $student = new Student(
-        $studentData['id'],
-        $studentData['name'],
-        new DateTimeImmutable($studentData['birth_date'])
-    );
-   echo $student->age();
-}
-exit();
-*/
