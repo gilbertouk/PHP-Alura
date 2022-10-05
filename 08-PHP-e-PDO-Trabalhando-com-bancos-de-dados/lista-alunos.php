@@ -17,6 +17,6 @@ foreach ($studentDataList as $studentData){
         new DateTimeImmutable($studentData['birth_date']));
 }
 
-echo "<pre>";
+//echo "<pre>";
 var_dump($studentList);
-echo "</pre>";
+//echo "</pre>";
