@@ -19,8 +19,9 @@ foreach ($alunoList as $aluno) {
         return $telefone->getNumero();
     })
     ->toArray();
-    echo "ID: {$aluno->getId()}\nNome: {$aluno->getNome()}\n";
-    echo "Telefones: " . implode(',', $telefones);
+    echo "ID: {$aluno->getId()}\n<br>Nome: {$aluno->getNome()}\n<br>";
+    echo "Telefones: " . implode(' / ', $telefones);
 
-    echo "\n\n";
+    echo "\n\n <br><br>";
+
 }
