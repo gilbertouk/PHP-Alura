@@ -6,6 +6,9 @@ use Alura\Doctrine\Helper\EntityManagerFactory;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+$entityManagerFactory = new EntityManagerFactory();
+$entityManager = $entityManagerFactory->getEntityManager();
+
 $aluno = new Aluno();
 $aluno->setNome($argv[1]);
 
@@ -16,9 +19,6 @@ for ($i = 2; $i < $argc; $i++) {
 
     $aluno->addTelefone($telefone);
 }
-
-$entityManagerFactory = new EntityManagerFactory();
-$entityManager = $entityManagerFactory->getEntityManager();
 
 $entityManager->persist($aluno);
 

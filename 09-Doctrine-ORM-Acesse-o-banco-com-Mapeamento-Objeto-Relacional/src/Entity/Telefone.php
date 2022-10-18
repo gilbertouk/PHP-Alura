@@ -26,15 +26,6 @@ class Telefone
      * @ORM\ManyToOne(targetEntity="Aluno")
      */
     private $aluno;
-    /**
-     * @ORM\OneToMany(targetEntity="Telefone", mappedBy="aluno")
-     */
-    private $telefones;
-
-    public function __construct()
-    {
-        $this->telefones = new ArrayCollection();
-    }
 
     public function getId(): int
     {
@@ -56,18 +47,6 @@ class Telefone
     {
         $this->numero = $numero;
         return $this;
-    }
-
-    public function addTelefone(Telefone $telefone)
-    {
-        $this->telefones->add($telefone);
-        $telefone->setAluno($this);
-        return $this;
-    }
-
-    public function getTelefones(): Collection
-    {
-        return $this->telefones;
     }
 
     public function getAluno(): Aluno
