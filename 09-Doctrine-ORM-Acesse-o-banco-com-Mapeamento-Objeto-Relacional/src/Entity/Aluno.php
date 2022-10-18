@@ -67,7 +67,7 @@ class Aluno
         return $this->telefones;
     }
 
-    public function addCurso(Curso $curso)
+    public function addCurso(Curso $curso): self
     {
         if ($this->cursos->contains($curso)) {
             return $this;
@@ -77,5 +77,10 @@ class Aluno
         $curso->addAluno($this);
 
         return $this;
+    }
+
+    public function getCursos(): Collection
+    {
+        return $this->cursos;
     }
 }
