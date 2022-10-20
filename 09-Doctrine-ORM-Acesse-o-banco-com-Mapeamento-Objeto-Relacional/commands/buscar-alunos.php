@@ -14,7 +14,7 @@ $entityManager = $entityManagerFactory->getEntityManager();
 //** @var Aluno[] $alunoList */
 //$alunoList = $alunoRepository->findAll();
 
-$dql = 'SELECT aluno FROM Alura\\Doctrine\\Entity\\Aluno aluno WHERE aluno.id=1 OR aluno.nome=\'Michelly Monica\' ORDER BY aluno.id';
+$dql = 'SELECT aluno FROM Alura\\Doctrine\\Entity\\Aluno aluno';
 $query = $entityManager->createQuery($dql);
 $alunoList = $query->getResult();
 

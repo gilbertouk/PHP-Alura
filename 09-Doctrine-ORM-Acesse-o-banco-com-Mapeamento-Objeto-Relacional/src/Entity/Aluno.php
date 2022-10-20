@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Alura\Doctrine\Repository\AlunoRepository")
  * @ORM\Table(name="Aluno")
  */
 class Aluno
