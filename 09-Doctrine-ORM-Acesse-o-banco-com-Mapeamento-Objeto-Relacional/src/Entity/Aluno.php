@@ -23,7 +23,7 @@ class Aluno
      */
     private $nome;
     /**
-     * @ORM\OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"remove", "persist"})
+     * @ORM\OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"remove", "persist"}, fetch="EAGER")
      */
     private $telefones;
 

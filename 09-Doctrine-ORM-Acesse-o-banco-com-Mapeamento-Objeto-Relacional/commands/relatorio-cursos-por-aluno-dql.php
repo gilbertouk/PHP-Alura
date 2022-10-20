@@ -13,11 +13,11 @@ $alunosRepository = $entityManager->getRepository(Aluno::class);
 $debugStack = new \Doctrine\DBAL\Logging\DebugStack();
 $entityManager->getConfiguration()->setSQLLogger($debugStack);
 
-
-/**
- * @var Aluno[] $alunos
- */
-$alunos = $alunosRepository->findAll();
+$classeAluno = Aluno::class;
+$dql = "SELECT aluno, telefones, cursos FROM $classeAluno aluno JOIN aluno.telefones telefones JOIN aluno.cursos cursos";
+$query = $entityManager->createQuery($dql);
+/** @var Aluno[] $alunos */
+$alunos = $query->getResult();
 
 foreach ($alunos as $aluno) {
     $telefones = $aluno->getTelefones()->map(function (Telefone $telefone) {
